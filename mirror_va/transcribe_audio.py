@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 This module provides functionalities for audio recording and transcription. It includes
 functions to record audio from the default microphone for a specified duration and
@@ -73,7 +74,7 @@ def transcribe_audio(file_path: str) -> Optional[str]:
     params = {
         'encode': 'true',
         'task': 'transcribe',
-        'language': 'pl',
+        'language': 'en',
         'word_timestamps': 'false',
         'output': 'txt'
     }

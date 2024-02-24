@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 This script utilizes the Porcupine wake word engine to detect specific keywords in real-time audio
 streams. It integrates with the Porcupine library and a custom recorder to continuously listen to

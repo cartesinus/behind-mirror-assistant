@@ -18,6 +18,8 @@ import time
 from pygame import mixer
 from mirror_va.detect_kwd import detect_kwd
 from mirror_va.transcribe_audio import record_audio, transcribe_audio
+from mirror_va.gpt_assistant import GPTAssistant
+from mirror_va.magic_mirror_interface import send_message_to_frontend
 
 def main(access_key):
     """
@@ -40,6 +42,7 @@ def main(access_key):
     keywords = ["bumblebee"]
     mixer.init()
     mixer.music.load('mirror_va/beep.mp3')
+    gpt = GPTAssistant()
 
     while True:
         # Detect keyword
@@ -57,6 +60,11 @@ def main(access_key):
 
             # Print transcribed audio
             print("Transcription:", transcription)
+
+            # Query GPT
+            answer = gpt.query(transcription)
+            print("Answer:", answer)
+            send_message_to_frontend(answer)
 
             # Wait before listening again
             time.sleep(1)
