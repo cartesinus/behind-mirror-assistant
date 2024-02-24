@@ -8,3 +8,7 @@
 docker pull onerahmet/openai-whisper-asr-webservice:latest
 docker run -d -p 9000:9000 -e ASR_MODEL=base -e ASR_ENGINE=openai_whisper onerahmet/openai-whisper-asr-webservice:latest
 ```
+3. Install portaudio:
+```bash
+sudo apt-get install portaudio19-dev
+```
